@@ -1,22 +1,31 @@
 //👉 Write your tests below here:
 
-import sortList from "./main.js";
+import {sortList} from "./main.js";
 
-test(`Should return an array where all words start & finish with a vowel`, function(){
-    
-    //arrange
-    const input = ["Australia", "Thailand", "Africa", "Bali", "India", "England", "America", "Asia",]
-    // act
-    const actual = sortList(input);
-    //assert
-    const expected = ["Australia", "Africa", "India", "America", "Asia",]
+describe(`Test function sortList for correct output`, () => {
+    test(`it must return an array where all words start & finish with a vowel`, () => {
+        const input = ["Australia", "Thailand", "Africa", "Bali", "India", "England", "America", "Asia",]
+         const actual = sortList(input);
+         const expected = ["Australia", "Africa", "India", "America", "Asia",]
+         expect(actual).toStrictEqual(expected);     
+    })
 
-    expect(actual).toStrictEqual(expected);
-  
+     test(`Check same items different order`, () => {
+         const input2 = ["Thailand", "Africa", "Bali", "India", "England", "America", "Asia","Australia",]//different order
+         const actual = sortList(input2);
+         const expected2 = ["Africa", "India", "America", "Asia", "Australia",]
+         expect(actual).toStrictEqual(expected2);
+     })   
+        
+    test(`Check different items different order`, () => {
+        const input3 = ["awesome", "idea", "ala", "eau","everybody", "alternative","something"] //different words
+        const actual = sortList(input3);
+        const expected3 = ["awesome", "idea", "ala", "eau", "alternative",]
+        expect(actual).toStrictEqual(expected3);
+    }) 
+       
+
 })
-
-
-
 
 
 
