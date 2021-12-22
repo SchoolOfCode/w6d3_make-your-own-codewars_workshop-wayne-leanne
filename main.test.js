@@ -23,6 +23,15 @@ describe(`Test function sortList for correct output`, () => {
         const expected3 = ["awesome", "idea", "ala", "eau", "alternative",]
         expect(actual).toStrictEqual(expected3);
     }) 
+
+    test(`if no words sart & finish with a vowel`, function (){
+
+        const input4 = ["cat", "dog", "lake", "hello"]
+        const actual = sortList(input4);
+        const expected4 = [];
+        expect(actual).toStrictEqual(expected4);
+
+    })
        
 
 })

@@ -12,16 +12,5 @@
 
 export function sortList(array){
     // Your function goes here.
-    let newArray = [];
-
-    array.forEach(element => {
-        let lst = element.length -1;
-       if (element[0].match(/[aeiou]/i) && element[lst].match(/[aeiou]/i) ) {
-
-            newArray.push(element); 
-       }
-       
-    });
-    return newArray;
 }
 
